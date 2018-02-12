@@ -8,7 +8,7 @@ public class InputValidator {
     }
 
     private int validateEndTimeInput(int inputEndTime) {
-        if (inputEndTime <= 4) {
+        if ((inputEndTime > 17 && inputEndTime < 24) || (inputEndTime <= 4)) {
             return inputEndTime;
         }
         return -1;

@@ -36,4 +36,13 @@ public class InputValidatorTest {
         InputValidator inputValidator = new InputValidator(startTime, expectedEndTime);
         assertEquals(expectedEndTime, inputValidator.getEndTime());
     }
+
+    @Test
+    public void given_UserEntersValidEndTimeBetween17And4am_Then_EndTimeIsSet() {
+        int expectedEndTime = 23;
+        int startTime = 17;
+        InputValidator inputValidator = new InputValidator(startTime, expectedEndTime);
+        assertEquals(expectedEndTime, inputValidator.getEndTime());
+    }
+
 }
