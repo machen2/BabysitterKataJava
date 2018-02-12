@@ -1,4 +1,7 @@
 public class InputValidator {
+    public static final int fivePM = 17;
+    public static final int midnight = 24;
+    public static final int latestEndTime = 4;
     private int inputStartTime;
     private int inputEndTime;
 
@@ -8,20 +11,19 @@ public class InputValidator {
     }
 
     private int validateEndTimeInput(int inputEndTime) {
-        if ((inputEndTime > 17 && inputEndTime < 24) || (inputEndTime <= 4)) {
+        if ((inputEndTime > fivePM && inputEndTime < midnight) || (inputEndTime <= latestEndTime)) {
             return inputEndTime;
         }
         return -1;
+
     }
 
     private int validateStartTimeInput(int inputStartTime) {
-        if (inputStartTime < 17) {
-            return 17;
+        if (inputStartTime < fivePM) {
+            return fivePM;
         }
-
         return inputStartTime;
     }
-
 
     public int getStartTime() {
         return inputStartTime;
